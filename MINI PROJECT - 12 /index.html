@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">C++ MINI PROJECT</p>
+      <h1>Library Management System</h1>
+      <p class="subtitle">Manage books, track availability and handle issue/return records.</p>
+    </div>
+    <span class="status"><i></i> Backend connected</span>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <article class="stat-card"><span>Total books</span><strong id="totalCount">0</strong></article>
+      <article class="stat-card"><span>Available</span><strong id="availableCount">0</strong></article>
+      <article class="stat-card"><span>Issued</span><strong id="issuedCount">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">BOOK CATALOGUE</p><h2>Manage your books</h2></div>
+        <button class="secondary" id="refreshBtn" type="button">Refresh</button>
+      </div>
+
+      <form id="bookForm" class="book-form">
+        <label>Book title<input id="title" name="title" maxlength="80" placeholder="e.g. The Alchemist" required></label>
+        <label>Author name<input id="author" name="author" maxlength="60" placeholder="e.g. Paulo Coelho" required></label>
+        <button class="primary" type="submit">+ Add book</button>
+      </form>
+
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search by title, author or ID..." aria-label="Search books">
+        <span id="resultCount">0 records</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Book</th><th>Author</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="bookRows"><tr><td colspan="5" class="empty">Loading books...</td></tr></tbody>
+        </table>
+      </div>
+      <p id="message" class="message" role="status"></p>
+    </section>
+    <footer>Library Management System · HTML, CSS, JavaScript & C++</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
